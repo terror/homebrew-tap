@@ -1,0 +1,61 @@
+name: tap-ci
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  schedule:
+    - cron: "0 12 * * 1"
+
+jobs:
+  discover:
+    runs-on: macos-latest
+
+    outputs:
+      formulas: ${{ steps.scan.outputs.formulas }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - id: scan
+        run: |
+          set -euo pipefail
+
+          if ! ls Formula/*.rb >/dev/null 2>&1; then
+            echo 'formulas=[]' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          list=$(find Formula -maxdepth 1 -name '*.rb' -print0 \
+            | xargs -0 -n1 basename \
+            | sed 's/\\.rb$//' \
+            | sort)
+
+          json=$(printf '%s\n' "$list" | jq -R . | jq -s .)
+
+          echo "formulas=$json" >> "$GITHUB_OUTPUT"
+
+  audit-build-test:
+    needs: discover
+
+    runs-on: macos-latest
+
+    if: ${{ needs.discover.outputs.formulas != '[]' }}
+
+    strategy:
+      matrix:
+        formula: ${{ fromJson(needs.discover.outputs.formulas) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Homebrew
+        run: brew update
+
+      - name: Audit formula
+        run: brew audit --strict --online Formula/${{ matrix.formula }}.rb
+
+      - name: Build from source
+        run: brew install --build-from-source Formula/${{ matrix.formula }}.rb
+
+      - name: Run test block
+        run: brew test ${{ matrix.formula }}
