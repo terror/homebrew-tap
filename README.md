@@ -20,7 +20,7 @@ results (e.g. brew search output):
 brew tap terror/tap
 ```
 
-**n.b.**: to clone the tap via SSH you will need to use:
+**n.b.** to clone the tap via SSH you will need to use:
 
 ```bash
 brew tap terror/tap https://github.com/terror/homebrew-tap

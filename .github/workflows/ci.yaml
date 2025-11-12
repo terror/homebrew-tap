@@ -64,7 +64,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Link tap to workspace
-        run: brew tap --force-auto-update "${TAP_NAME}" "$GITHUB_WORKSPACE"
+        run: |
+          set -euo pipefail
+          owner="${TAP_NAME%%/*}"
+          tap="${TAP_NAME##*/}"
+          tap_dir="$(brew --repo)/Library/Taps/${owner}/homebrew-${tap}"
+          rm -rf "$tap_dir"
+          dirbase="$(dirname "$tap_dir")"
+          mkdir -p "$dirbase"
+          ln -s "$GITHUB_WORKSPACE" "$tap_dir"
 
       - name: Update Homebrew
         run: brew update
