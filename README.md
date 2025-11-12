@@ -1,5 +1,7 @@
 ## homebrew-tap
 
+[![CI](https://github.com/terror/homebrew-tap/actions/workflows/ci.yaml/badge.svg)](https://github.com/terror/homebrew-tap/actions/workflows/ci.yaml)
+
 **homebrew-tap** is my personal collection of formulas for
 [homebrew](https://brew.sh/).
 

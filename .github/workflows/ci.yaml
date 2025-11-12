@@ -28,14 +28,13 @@ jobs:
             exit 0
           fi
 
-          list=$(find Formula -maxdepth 1 -name '*.rb' -print0 \
-            | xargs -0 -n1 basename \
-            | sed 's/\\.rb$//' \
+          list=$(find Formula -maxdepth 1 -name '*.rb' -type f -print0 \
+            | xargs -0 -n1 basename -s .rb \
             | sort)
 
-          json=$(printf '%s\n' "$list" | jq -R . | jq -s .)
+          json=$(printf '%s\n' "$list" | jq -R . | jq -c -s .)
 
-          echo "formulas=$json" >> "$GITHUB_OUTPUT"
+          printf 'formulas=%s\n' "$json" >> "$GITHUB_OUTPUT"
 
   audit-build-test:
     needs: discover
