@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 12 * * 1"
+
+jobs:
+  homebrew:
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        formula: [just-lsp, val]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Homebrew
+        run: brew update
+
+      - name: Prepare tap workspace
+        run: |
+          set -euo pipefail
+          brew tap terror/tap >/dev/null
+          tap_dir="$(brew --repo)/Library/Taps/terror/homebrew-tap"
+          mkdir -p "$tap_dir/Formula"
+          rsync -a Formula/ "$tap_dir/Formula/"
+
+      - name: Audit formula
+        run: brew audit --strict --online terror/tap/${{ matrix.formula }}
+
+      - name: Build from source
+        run: brew install --build-from-source terror/tap/${{ matrix.formula }}
+
+      - name: Run test block
+        run: brew test terror/tap/${{ matrix.formula }}
