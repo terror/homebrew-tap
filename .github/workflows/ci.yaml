@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        formula: [just-lsp, val]
+        formula: [edmv, just-lsp, val]
 
     steps:
       - uses: actions/checkout@v4
