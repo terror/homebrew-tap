@@ -16,9 +16,11 @@ jobs:
 
     outputs:
       formulas: ${{ steps.scan.outputs.formulas }}
+      tap: ${{ steps.tap.outputs.tap }}
 
     steps:
       - uses: actions/checkout@v4
+
       - id: scan
         run: |
           set -euo pipefail
@@ -36,6 +38,14 @@ jobs:
 
           printf 'formulas=%s\n' "$json" >> "$GITHUB_OUTPUT"
 
+      - id: tap
+        run: |
+          set -euo pipefail
+          owner="${GITHUB_REPOSITORY%%/*}"
+          repo="${GITHUB_REPOSITORY##*/}"
+          tap_name="${repo#homebrew-}"
+          printf 'tap=%s/%s\n' "$owner" "$tap_name" >> "$GITHUB_OUTPUT"
+
   audit-build-test:
     needs: discover
 
@@ -47,17 +57,23 @@ jobs:
       matrix:
         formula: ${{ fromJson(needs.discover.outputs.formulas) }}
 
+    env:
+      TAP_NAME: ${{ needs.discover.outputs.tap }}
+
     steps:
       - uses: actions/checkout@v4
+
+      - name: Link tap to workspace
+        run: brew tap --force-auto-update "${TAP_NAME}" "$GITHUB_WORKSPACE"
 
       - name: Update Homebrew
         run: brew update
 
       - name: Audit formula
-        run: brew audit --strict --online Formula/${{ matrix.formula }}.rb
+        run: brew audit --strict --online "${TAP_NAME}/${{ matrix.formula }}"
 
       - name: Build from source
-        run: brew install --build-from-source Formula/${{ matrix.formula }}.rb
+        run: brew install --build-from-source "${TAP_NAME}/${{ matrix.formula }}"
 
       - name: Run test block
-        run: brew test ${{ matrix.formula }}
+        run: brew test "${TAP_NAME}/${{ matrix.formula }}"
