@@ -35,3 +35,4 @@ Below lists the formulae installable via this tap:
 | name                                           | description                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------ |
 | [just-lsp](https://github.com/terror/just-lsp) | A language server for [just](https://github.com/casey/just). |
+| [val](https://github.com/terror/val)           | An arbitrary precision calculator language.                  |
