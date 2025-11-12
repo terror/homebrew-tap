@@ -2,86 +2,38 @@ name: CI
 
 on:
   pull_request:
-    branches:
-    - '*'
   push:
-    branches:
-    - master
+    branches: [master]
   schedule:
     - cron: "0 12 * * 1"
 
 jobs:
-  discover:
+  homebrew:
     runs-on: macos-latest
-
-    outputs:
-      formulas: ${{ steps.scan.outputs.formulas }}
-      tap: ${{ steps.tap.outputs.tap }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - id: scan
-        run: |
-          set -euo pipefail
-
-          if ! ls Formula/*.rb >/dev/null 2>&1; then
-            echo 'formulas=[]' >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          list=$(find Formula -maxdepth 1 -name '*.rb' -type f -print0 \
-            | xargs -0 -n1 basename -s .rb \
-            | sort)
-
-          json=$(printf '%s\n' "$list" | jq -R . | jq -c -s .)
-
-          printf 'formulas=%s\n' "$json" >> "$GITHUB_OUTPUT"
-
-      - id: tap
-        run: |
-          set -euo pipefail
-          owner="${GITHUB_REPOSITORY%%/*}"
-          repo="${GITHUB_REPOSITORY##*/}"
-          tap_name="${repo#homebrew-}"
-          printf 'tap=%s/%s\n' "$owner" "$tap_name" >> "$GITHUB_OUTPUT"
-
-  audit-build-test:
-    needs: discover
-
-    runs-on: macos-latest
-
-    if: ${{ needs.discover.outputs.formulas != '[]' }}
 
     strategy:
       matrix:
-        formula: ${{ fromJson(needs.discover.outputs.formulas) }}
-
-    env:
-      TAP_NAME: ${{ needs.discover.outputs.tap }}
+        formula: [just-lsp, val]
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Link tap to workspace
-        run: |
-          set -euo pipefail
-          owner="${TAP_NAME%%/*}"
-          tap="${TAP_NAME##*/}"
-          tap_dir="$(brew --repo)/Library/Taps/${owner}/homebrew-${tap}"
-          rm -rf "$tap_dir"
-          dirbase="$(dirname "$tap_dir")"
-          mkdir -p "$dirbase"
-          ln -s "$GITHUB_WORKSPACE" "$tap_dir"
 
       - name: Update Homebrew
         run: brew update
 
+      - name: Prepare tap workspace
+        run: |
+          set -euo pipefail
+          brew tap terror/tap >/dev/null
+          tap_dir="$(brew --repo)/Library/Taps/terror/homebrew-tap"
+          mkdir -p "$tap_dir/Formula"
+          rsync -a Formula/ "$tap_dir/Formula/"
+
       - name: Audit formula
-        run: brew audit --strict --online "${TAP_NAME}/${{ matrix.formula }}"
+        run: brew audit --strict --online terror/tap/${{ matrix.formula }}
 
       - name: Build from source
-        run: brew install --build-from-source "${TAP_NAME}/${{ matrix.formula }}"
+        run: brew install --build-from-source terror/tap/${{ matrix.formula }}
 
       - name: Run test block
-        run: brew test "${TAP_NAME}/${{ matrix.formula }}"
+        run: brew test terror/tap/${{ matrix.formula }}
