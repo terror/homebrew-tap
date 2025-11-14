@@ -1,5 +1,5 @@
 class Spymux < Formula
-  desc "A centralized view for all of your tmux panes"
+  desc "Centralized view for all of your tmux panes"
   homepage "https://github.com/terror/spymux"
   url "https://github.com/terror/spymux/archive/refs/tags/0.1.0.tar.gz"
   sha256 "0ee8560f484c3970ad442fe8adec7506949dfeb6bb6de92169f4e48acf72143e"
