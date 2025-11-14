@@ -39,4 +39,5 @@ Below lists the formulae installable via this tap:
 | [just-lsp](https://github.com/terror/just-lsp) | A language server for [just](https://github.com/casey/just). |
 | [edmv](https://github.com/terror/edmv)         | Bulk rename files using your favorite editor.                |
 | [present](https://github.com/terror/present)   | Interpolate shell command output directly into markdown.     |
+| [spymux](https://github.com/terror/spymux)     | A centralized view for all of your tmux panes.               |
 | [val](https://github.com/terror/val)           | An arbitrary precision calculator language.                  |
