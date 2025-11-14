@@ -34,10 +34,10 @@ taps such as this one outside of search.
 
 Below lists the formulae installable via this tap:
 
-| name                                           | description                                                 |
-| ---------------------------------------------- | ----------------------------------------------------------- |
-| [just-lsp](https://github.com/terror/just-lsp) | A language server for [just](https://github.com/casey/just) |
-| [edmv](https://github.com/terror/edmv)         | Bulk rename files using your favorite editor                |
-| [present](https://github.com/terror/present)   | Interpolate shell command output directly into markdown     |
-| [spymux](https://github.com/terror/spymux)     | A centralized view for all of your tmux panes               |
-| [val](https://github.com/terror/val)           | An arbitrary precision calculator language                  |
+| name                                           | version | description                                                 |
+| ---------------------------------------------- | ------- | ----------------------------------------------------------- |
+| [just-lsp](https://github.com/terror/just-lsp) | 0.2.8   | A language server for [just](https://github.com/casey/just) |
+| [edmv](https://github.com/terror/edmv)         | 1.0.1   | Bulk rename files using your favorite editor                |
+| [present](https://github.com/terror/present)   | 0.2.3   | Interpolate shell command output directly into markdown     |
+| [spymux](https://github.com/terror/spymux)     | 0.1.1   | A centralized view for all of your tmux panes               |
+| [val](https://github.com/terror/val)           | 0.3.6   | An arbitrary precision calculator language                  |
