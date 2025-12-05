@@ -40,5 +40,6 @@ Below lists the formulae installable via this tap:
 | [just-lsp](https://github.com/terror/just-lsp) | 0.2.8   | A language server for [just](https://github.com/casey/just) |
 | [present](https://github.com/terror/present)   | 0.2.3   | Interpolate shell command output directly into markdown     |
 | [pyproject](https://github.com/terror/pyproject) | 0.1.2   | Linter and language server for pyproject.toml files         |
+| [skeleton](https://github.com/terror/skeleton) | 0.2.3   | Project scaffolding utility                                 |
 | [spymux](https://github.com/terror/spymux)     | 0.1.1   | A centralized view for all of your tmux panes               |
 | [val](https://github.com/terror/val)           | 0.3.6   | An arbitrary precision calculator language                  |
