@@ -1,6 +1,6 @@
 ## homebrew-tap
 
-[![CI](https://github.com/terror/homebrew-tap/actions/workflows/ci.yaml/badge.svg)](https://github.com/terror/homebrew-tap/actions/workflows/ci.yaml)
+[![build](https://img.shields.io/github/actions/workflow/status/terror/homebrew-tap/ci.yaml?branch=master&style=flat&labelColor=1d1d1d&color=424242&logo=GitHub%20Actions&logoColor=white&label=build)](https://github.com/terror/homebrew-tap/actions/workflows/ci.yaml)
 
 **homebrew-tap** is my personal collection of formulae for
 [homebrew](https://brew.sh/).
