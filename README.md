@@ -34,12 +34,19 @@ taps such as this one outside of search.
 
 Below lists the formulae installable via this tap:
 
-| name                                           | version | description                                                 |
-| ---------------------------------------------- | ------- | ----------------------------------------------------------- |
-| [edmv](https://github.com/terror/edmv)         | 1.0.1   | Bulk rename files using your favorite editor                |
-| [just-lsp](https://github.com/terror/just-lsp) | 0.2.8   | A language server for [just](https://github.com/casey/just) |
-| [present](https://github.com/terror/present)   | 0.2.3   | Interpolate shell command output directly into markdown     |
+| name                                             | version | description                                                 |
+| ------------------------------------------------ | ------- | ----------------------------------------------------------- |
+| [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor                |
+| [just-lsp](https://github.com/terror/just-lsp)   | 0.2.8   | A language server for [just](https://github.com/casey/just) |
+| [present](https://github.com/terror/present)     | 0.2.3   | Interpolate shell command output directly into markdown     |
 | [pyproject](https://github.com/terror/pyproject) | 0.1.2   | Linter and language server for pyproject.toml files         |
-| [skeleton](https://github.com/terror/skeleton) | 0.2.3   | Project scaffolding utility                                 |
-| [spymux](https://github.com/terror/spymux)     | 0.1.1   | A centralized view for all of your tmux panes               |
-| [val](https://github.com/terror/val)           | 0.3.6   | An arbitrary precision calculator language                  |
+| [skeleton](https://github.com/terror/skeleton)   | 0.2.3   | Project scaffolding utility                                 |
+| [spymux](https://github.com/terror/spymux)       | 0.1.1   | A centralized view for all of your tmux panes               |
+| [val](https://github.com/terror/val)             | 0.3.6   | An arbitrary precision calculator language                  |
+
+## Prior Art
+
+I was inspired to build this after trying to find an easy way to install various
+projects I have via [homebrew](https://brew.sh/). I found out you could sidestep
+`homebrew-core` easily via a custom 'tap' (i.e. this repository) after looking
+at the tap [HashiCorp](https://github.com/hashicorp/homebrew-tap) maintains.
