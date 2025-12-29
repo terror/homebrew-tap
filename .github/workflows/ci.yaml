@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        formula: [edmv, just-lsp, present, pyproject, skeleton, spymux, val]
+        formula: [edmv, just-lsp, present, pyproject, skeleton, spymux, swab, val]
 
     steps:
       - uses: actions/checkout@v4
