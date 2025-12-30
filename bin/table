@@ -1,0 +1,92 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "pathname"
+
+ROOT = Pathname.new(__dir__).parent
+FORMULA_DIR = ROOT.join("Formula")
+TARBALL_EXTENSIONS = %w[.tar.gz .tgz .zip .tar.bz2 .tar.xz].freeze
+
+def extract_value(lines, key)
+  pattern = /^\s*#{Regexp.escape(key)}\s+["'](.+?)["']/
+
+  lines.each do |line|
+    match = line.match(pattern)
+    return match[1] if match
+  end
+
+  nil
+end
+
+def version_from_url(url, name)
+  return nil unless url
+
+  if url.include?("/refs/tags/")
+    tag = url.split("/refs/tags/").last
+    tag = tag.split(/[?#]/, 2).first
+    TARBALL_EXTENSIONS.each do |ext|
+      tag = tag.delete_suffix(ext) if tag.end_with?(ext)
+    end
+
+    return tag.sub(/\A[vV]/, "") unless tag.nil? || tag.empty?
+  end
+
+  tag = url[%r{/releases/download/([^/]+)/}, 1]
+  return tag.sub(/\A[vV]/, "") if tag
+
+  base = File.basename(url)
+
+  TARBALL_EXTENSIONS.each do |ext|
+    if base.end_with?(ext)
+      base = base.delete_suffix(ext)
+      break
+    end
+  end
+
+  base = base.sub(/\A#{Regexp.escape(name)}[-_]?/, "")
+  base = base.sub(/\A[vV]/, "")
+
+  base.empty? ? nil : base
+end
+
+def format_row(cells, widths)
+  cells.zip(widths).map { |cell, width| cell.ljust(width) }.join(" | ")
+end
+
+formula_paths = Dir.glob(FORMULA_DIR.join("*.rb")).sort
+
+rows = formula_paths.map do |path|
+  lines = File.readlines(path, chomp: true)
+  name = File.basename(path, ".rb")
+
+  desc = extract_value(lines, "desc")
+  homepage = extract_value(lines, "homepage")
+  version = extract_value(lines, "version")
+  version ||= version_from_url(extract_value(lines, "url"), name)
+
+  missing = []
+  missing << "desc" unless desc
+  missing << "homepage" unless homepage
+  missing << "version" unless version
+
+  unless missing.empty?
+    abort "missing #{missing.join(", ")} for #{name} in #{path}"
+  end
+
+  ["[#{name}](#{homepage})", version, desc]
+end
+
+headers = ["name", "version", "description"]
+
+widths = headers.map(&:length)
+
+rows.each do |row|
+  widths = widths.zip(row.map(&:length)).map(&:max)
+end
+
+puts "| #{format_row(headers, widths)} |"
+puts "| #{widths.map { |w| "-" * w }.join(" | ")} |"
+
+rows.each do |row|
+  puts "| #{format_row(row, widths)} |"
+end
