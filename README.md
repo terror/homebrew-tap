@@ -42,7 +42,7 @@ Below lists the formulae installable via this tap:
 | [pyproject](https://github.com/terror/pyproject) | 0.1.2   | Linter and language server for pyproject.toml files     |
 | [skeleton](https://github.com/terror/skeleton)   | 0.2.3   | Project scaffolding utility                             |
 | [spymux](https://github.com/terror/spymux)       | 0.1.2   | Centralized view for all of your tmux panes             |
-| [swab](https://github.com/terror/swab)           | 0.1.2   | Configurable project cleaning tool                      |
+| [swab](https://github.com/terror/swab)           | 0.1.3   | Configurable project cleaning tool                      |
 | [val](https://github.com/terror/val)             | 0.3.6   | Arbitrary precision calculator language                 |
 
 ## Prior Art
