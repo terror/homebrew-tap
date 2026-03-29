@@ -36,6 +36,7 @@ Below lists the formulae installable via this tap:
 
 | name                                             | version | description                                             |
 | ------------------------------------------------ | ------- | ------------------------------------------------------- |
+| [axil](https://github.com/terror/axil)           | 0.2.0   | TUI for tree-sitter                                     |
 | [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor            |
 | [just-lsp](https://github.com/terror/just-lsp)   | 0.3.4   | Language server for just                                |
 | [present](https://github.com/terror/present)     | 0.2.3   | Interpolate shell command output directly into markdown |
