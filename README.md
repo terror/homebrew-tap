@@ -40,7 +40,7 @@ Below lists the formulae installable via this tap:
 | [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor            |
 | [just-lsp](https://github.com/terror/just-lsp)   | 0.4.4   | Language server for just                                |
 | [present](https://github.com/terror/present)     | 0.2.3   | Interpolate shell command output directly into markdown |
-| [pyproject](https://github.com/terror/pyproject) | 0.1.2   | Linter and language server for pyproject.toml files     |
+| [pyproject](https://github.com/terror/pyproject) | 0.1.3   | Linter and language server for pyproject.toml files     |
 | [skeleton](https://github.com/terror/skeleton)   | 0.2.4   | Project scaffolding utility                             |
 | [spymux](https://github.com/terror/spymux)       | 0.1.3   | Centralized view for all of your tmux panes             |
 | [swab](https://github.com/terror/swab)           | 0.1.3   | Configurable project cleaning tool                      |
