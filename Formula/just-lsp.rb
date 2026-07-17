@@ -1,8 +1,8 @@
 class JustLsp < Formula
   desc "Language server for just"
   homepage "https://github.com/terror/just-lsp"
-  url "https://github.com/terror/just-lsp/archive/refs/tags/0.4.4.tar.gz"
-  sha256 "052f0733252fc03f34cb1185cc1e905db46ed8bfe54c8897f7a118ff1b02655e"
+  url "https://github.com/terror/just-lsp/archive/refs/tags/0.4.8.tar.gz"
+  sha256 "dd62ebb8da4e1c3e55c915a3ad28b04f8962528c7f0dcc31a1ae0873620ce207"
   license "CC0-1.0"
   head "https://github.com/terror/just-lsp.git", branch: "main"
 
