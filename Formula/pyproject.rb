@@ -2,7 +2,7 @@ class Pyproject < Formula
   desc "Linter and language server for pyproject.toml files"
   homepage "https://github.com/terror/pyproject"
   url "https://github.com/terror/pyproject/archive/refs/tags/0.1.3.tar.gz"
-  sha256 "6f8be8216c580c8927f210414d15db070ce0e0b5b869106b3f2a778f79af7c65"
+  sha256 "06d759fbbf9af3c6d1cec43c1f658bf61cdff58f97713af3c3d74a98d8c8dc34"
   license "CC0-1.0"
   head "https://github.com/terror/pyproject.git", branch: "master"
 
