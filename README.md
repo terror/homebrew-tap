@@ -38,7 +38,7 @@ Below lists the formulae installable via this tap:
 | ------------------------------------------------ | ------- | ------------------------------------------------------- |
 | [axil](https://github.com/terror/axil)           | 0.2.2   | TUI for tree-sitter                                     |
 | [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor            |
-| [just-lsp](https://github.com/terror/just-lsp)   | 0.4.8   | Language server for just                                |
+| [just-lsp](https://github.com/terror/just-lsp)   | 0.5.0   | Language server for just                                |
 | [ocs](https://github.com/terror/ocs)             | 0.1.1   | Session picker for opencode                             |
 | [present](https://github.com/terror/present)     | 0.2.3   | Interpolate shell command output directly into markdown |
 | [pyproject](https://github.com/terror/pyproject) | 0.1.3   | Linter and language server for pyproject.toml files     |
