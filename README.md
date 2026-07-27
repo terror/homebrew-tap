@@ -23,7 +23,7 @@ brew tap terror/tap
 **n.b.** to clone the tap via SSH you will need to use:
 
 ```bash
-brew tap terror/tap https://github.com/terror/homebrew-tap
+brew tap terror/tap git@github.com:terror/homebrew-tap.git
 ```
 
 While you may search across taps, it is necessary to always use fully qualified
