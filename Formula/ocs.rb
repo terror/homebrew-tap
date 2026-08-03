@@ -1,8 +1,8 @@
 class Ocs < Formula
   desc "Session picker for opencode"
   homepage "https://github.com/terror/ocs"
-  url "https://github.com/terror/ocs/archive/refs/tags/0.1.3.tar.gz"
-  sha256 "3d85c01b76453f858376f88650faca6d4491cb68cd1b7770d5d3b397283dbf1a"
+  url "https://github.com/terror/ocs/archive/refs/tags/0.1.4.tar.gz"
+  sha256 "4bd0eb6ab3683e809acedb2073184197d68c7795a27a0d132a1f3708eec4ba3e"
   license "CC0-1.0"
   head "https://github.com/terror/ocs.git", branch: "master"
 
