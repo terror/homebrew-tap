@@ -38,6 +38,7 @@ Below lists the formulae installable via this tap:
 | ------------------------------------------------ | ------- | ------------------------------------------------------- |
 | [axil](https://github.com/terror/axil)           | 0.2.2   | TUI for tree-sitter                                     |
 | [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor            |
+| [honu](https://github.com/terror/honu)           | 0.1.0   | Back up and search your shell history with SQLite       |
 | [just-lsp](https://github.com/terror/just-lsp)   | 0.6.1   | Language server for just                                |
 | [ocs](https://github.com/terror/ocs)             | 0.1.4   | Session picker for opencode                             |
 | [present](https://github.com/terror/present)     | 0.2.3   | Interpolate shell command output directly into markdown |
