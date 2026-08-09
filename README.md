@@ -40,7 +40,7 @@ Below lists the formulae installable via this tap:
 | [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor            |
 | [honu](https://github.com/terror/honu)           | 0.1.0   | Back up and search your shell history with SQLite       |
 | [just-lsp](https://github.com/terror/just-lsp)   | 0.6.1   | Language server for just                                |
-| [kotomori](https://github.com/terror/kotomori)   | 0.1.0   | Coding agent focused on performance and simplicity      |
+| [kotomori](https://github.com/terror/kotomori)   | 0.2.0   | Coding agent focused on performance and simplicity      |
 | [ocs](https://github.com/terror/ocs)             | 0.1.5   | Session picker for opencode                             |
 | [present](https://github.com/terror/present)     | 0.2.3   | Interpolate shell command output directly into markdown |
 | [pyproject](https://github.com/terror/pyproject) | 0.2.1   | Linter and language server for pyproject.toml files     |

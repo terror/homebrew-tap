@@ -1,8 +1,8 @@
 class Kotomori < Formula
   desc "Coding agent focused on performance and simplicity"
   homepage "https://github.com/terror/kotomori"
-  url "https://github.com/terror/kotomori/archive/refs/tags/0.1.0.tar.gz"
-  sha256 "fad6625f6fc01a96423712d910ce85b5d1efba33cebab403e96cae5554b14bee"
+  url "https://github.com/terror/kotomori/archive/refs/tags/0.2.0.tar.gz"
+  sha256 "de2650dd78dfb0429f6cebef3723250656157364931366f8a5e93306fe1f63f7"
   license "CC0-1.0"
   head "https://github.com/terror/kotomori.git", branch: "master"
 
