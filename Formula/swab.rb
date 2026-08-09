@@ -1,8 +1,8 @@
 class Swab < Formula
   desc "Configurable project cleaning tool"
   homepage "https://github.com/terror/swab"
-  url "https://github.com/terror/swab/archive/refs/tags/0.1.4.tar.gz"
-  sha256 "d0d75243dc877f0d59dac6f0aab70e7e2eb4ecd941cbc429f94b6bfefc0a918c"
+  url "https://github.com/terror/swab/archive/refs/tags/0.1.5.tar.gz"
+  sha256 "fbdfc85d0d9a552032f9c97dac71ae08c36aa8da0116e01fa468a904c838166b"
   license "CC0-1.0"
   head "https://github.com/terror/swab.git", branch: "master"
 
