@@ -40,13 +40,13 @@ Below lists the formulae installable via this tap:
 | [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor            |
 | [honu](https://github.com/terror/honu)           | 0.1.0   | Back up and search your shell history with SQLite       |
 | [just-lsp](https://github.com/terror/just-lsp)   | 0.6.2   | Language server for just                                |
-| [kotomori](https://github.com/terror/kotomori)   | 0.1.0   | Coding agent focused on performance and simplicity      |
+| [kotomori](https://github.com/terror/kotomori)   | 0.2.0   | Coding agent focused on performance and simplicity      |
 | [ocs](https://github.com/terror/ocs)             | 0.1.5   | Session picker for opencode                             |
 | [present](https://github.com/terror/present)     | 0.2.3   | Interpolate shell command output directly into markdown |
 | [pyproject](https://github.com/terror/pyproject) | 0.2.1   | Linter and language server for pyproject.toml files     |
 | [skeleton](https://github.com/terror/skeleton)   | 0.2.4   | Project scaffolding utility                             |
 | [spymux](https://github.com/terror/spymux)       | 0.1.3   | Centralized view for all of your tmux panes             |
-| [swab](https://github.com/terror/swab)           | 0.1.4   | Configurable project cleaning tool                      |
+| [swab](https://github.com/terror/swab)           | 0.1.5   | Configurable project cleaning tool                      |
 | [val](https://github.com/terror/val)             | 0.4.1   | Arbitrary precision calculator language                 |
 | [wt](https://github.com/terror/wt)               | 0.1.2   | Simple git worktree manager                             |
 
