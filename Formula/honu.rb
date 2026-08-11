@@ -1,8 +1,8 @@
 class Honu < Formula
   desc "Back up and search your shell history with SQLite"
   homepage "https://github.com/terror/honu"
-  url "https://github.com/terror/honu/archive/refs/tags/0.1.0.tar.gz"
-  sha256 "f73078963f85b5d7e142ef5f001c1d53ebfcb49f41af5487a999780d20d71a6b"
+  url "https://github.com/terror/honu/archive/refs/tags/0.1.1.tar.gz"
+  sha256 "e3bab211b2baf88d04f1745dca91c4cbd0e0433e4f845c67e7ff9cb723691829"
   license "CC0-1.0"
   head "https://github.com/terror/honu.git", branch: "master"
 
