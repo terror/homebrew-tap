@@ -38,7 +38,7 @@ Below lists the formulae installable via this tap:
 | ------------------------------------------------ | ------- | ------------------------------------------------------- |
 | [axil](https://github.com/terror/axil)           | 0.2.2   | TUI for tree-sitter                                     |
 | [edmv](https://github.com/terror/edmv)           | 1.0.1   | Bulk rename files using your favorite editor            |
-| [honu](https://github.com/terror/honu)           | 0.1.1   | Back up and search your shell history with SQLite       |
+| [honu](https://github.com/terror/honu)           | 0.1.2   | Back up and search your shell history with SQLite       |
 | [just-lsp](https://github.com/terror/just-lsp)   | 0.6.2   | Language server for just                                |
 | [kotomori](https://github.com/terror/kotomori)   | 0.2.0   | Coding agent focused on performance and simplicity      |
 | [ocs](https://github.com/terror/ocs)             | 0.2.0   | Session picker for opencode                             |
