@@ -24,6 +24,7 @@ jobs:
       - name: Prepare tap workspace
         run: |
           set -euo pipefail
+          brew trust terror/tap
           brew tap terror/tap >/dev/null
           tap_dir="$(brew --repo)/Library/Taps/terror/homebrew-tap"
           mkdir -p "$tap_dir/Formula"
