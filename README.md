@@ -48,7 +48,7 @@ Below lists the formulae installable via this tap:
 | [spymux](https://github.com/terror/spymux)       | 0.1.3   | Centralized view for all of your tmux panes             |
 | [swab](https://github.com/terror/swab)           | 0.1.5   | Configurable project cleaning tool                      |
 | [val](https://github.com/terror/val)             | 0.6.0   | Arbitrary precision calculator language                 |
-| [wt](https://github.com/terror/wt)               | 0.1.2   | Simple git worktree manager                             |
+| [wt](https://github.com/terror/wt)               | 0.2.0   | Simple git worktree manager                             |
 
 ## Prior Art
 
