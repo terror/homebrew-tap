@@ -1,8 +1,8 @@
 class Val < Formula
   desc "Arbitrary precision calculator language"
   homepage "https://github.com/terror/val"
-  url "https://github.com/terror/val/archive/refs/tags/0.4.2.tar.gz"
-  sha256 "aebc39725080e445a694b594812c3a1d1c58f88ad8efefc83d72619abc3c33a2"
+  url "https://github.com/terror/val/archive/refs/tags/0.5.0.tar.gz"
+  sha256 "a13748f34e95528cd3ec8a63465428003e4f2aec6d191ad1d8e26bc663ed8ee5"
   license "CC0-1.0"
   head "https://github.com/terror/val.git", branch: "master"
 
