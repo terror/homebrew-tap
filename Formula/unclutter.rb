@@ -1,8 +1,8 @@
 class Unclutter < Formula
   desc "Extract readable content from HTML files"
   homepage "https://github.com/terror/unclutter"
-  url "https://github.com/terror/unclutter/archive/refs/tags/0.1.0.tar.gz"
-  sha256 "8e84308d7075944e2158428d4508afff0eedbd90e41225d59da52ef03955246a"
+  url "https://github.com/terror/unclutter/archive/refs/tags/0.1.1.tar.gz"
+  sha256 "e7935b7874bd5f17fda06dca8a0199a60ca8975dd12f913354343328c1a3aaa0"
   license "CC0-1.0"
   head "https://github.com/terror/unclutter.git", branch: "master"
 
@@ -13,6 +13,6 @@ class Unclutter < Formula
   end
 
   test do
-    assert_match "Usage: unclutter", shell_output("#{bin}/unclutter --help")
+    assert_match version.to_s, shell_output("#{bin}/unclutter --version")
   end
 end
