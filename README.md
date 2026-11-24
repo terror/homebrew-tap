@@ -49,7 +49,7 @@ Below lists the formulae installable via this tap:
 | [strew](https://github.com/terror/strew)         | 0.1.1   | Tool to manage your dotfiles                            |
 | [swab](https://github.com/terror/swab)           | 0.1.5   | Configurable project cleaning tool                      |
 | [unclutter](https://github.com/terror/unclutter) | 0.1.0   | Extract readable content from HTML files                |
-| [val](https://github.com/terror/val)             | 0.7.0   | Arbitrary precision calculator language                 |
+| [val](https://github.com/terror/val)             | 0.8.0   | Arbitrary precision calculator language                 |
 | [wt](https://github.com/terror/wt)               | 0.2.0   | Simple git worktree manager                             |
 
 ## Prior Art
