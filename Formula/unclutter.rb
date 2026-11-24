@@ -1,8 +1,8 @@
 class Unclutter < Formula
   desc "Extract readable content from HTML files"
   homepage "https://github.com/terror/unclutter"
-  url "https://github.com/terror/unclutter/archive/refs/tags/0.1.1.tar.gz"
-  sha256 "e7935b7874bd5f17fda06dca8a0199a60ca8975dd12f913354343328c1a3aaa0"
+  url "https://github.com/terror/unclutter/archive/refs/tags/0.2.0.tar.gz"
+  sha256 "b65dec829062df554b8463b3ee7a7cf81c7d656f9fd3ada25a12e487815d995d"
   license "CC0-1.0"
   head "https://github.com/terror/unclutter.git", branch: "master"
 
